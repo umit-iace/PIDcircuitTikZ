@@ -202,7 +202,7 @@ rotate=180
 
 % Process measure and control
 \tikzset{
- measure/.style args={#1}{
+ measurePiD/.style args={#1}{
    append after command={%
      \pgfextra
      \node[scale=0.35, anchor=south, yshift=-2*\the\pgflinewidth] at (\tikzlastnode) {#1};
@@ -210,14 +210,14 @@ rotate=180
      \endpgfextra
     }
   },
- at/.style args={#1#2#3}{
+ atPiD/.style args={#1#2#3}{
    above=#2\tikzcircuitssizeunit of #1, #3,
    append after command={%
      \pgfextra{
       \draw (\tikzlastnode) to (#1);}
     }
   },
- with/.style args={#1#2#3#4}{
+ withPiD/.style args={#1#2#3#4}{
    append after command={%
      \pgfextra{
       \node[#1={name=\tikzlastnode-#1,#4}] at ([xshift=#2*\tikzcircuitssizeunit,yshift=#3*\tikzcircuitssizeunit]\tikzlastnode) {};}
